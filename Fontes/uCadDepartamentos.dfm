@@ -1,6 +1,7 @@
 object frmDepartamentos: TfrmDepartamentos
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Cadastro Departamentos'
   ClientHeight = 476
   ClientWidth = 450
@@ -11,6 +12,8 @@ object frmDepartamentos: TfrmDepartamentos
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -25,6 +28,7 @@ object frmDepartamentos: TfrmDepartamentos
       Width = 185
       Height = 33
       Caption = 'Incluir'
+      OnClick = btnIncluirClick
     end
     object SpeedButton1: TSpeedButton
       Left = 257
@@ -32,13 +36,15 @@ object frmDepartamentos: TfrmDepartamentos
       Width = 185
       Height = 33
       Caption = 'Excluir'
+      OnClick = SpeedButton1Click
     end
   end
-  object DBGrid1: TDBGrid
+  object dbgDepartamentos: TDBGrid
     Left = 1
     Top = 102
     Width = 448
     Height = 369
+    DataSource = dsDepartamentos
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -48,18 +54,21 @@ object frmDepartamentos: TfrmDepartamentos
     Columns = <
       item
         Expanded = False
-        FieldName = 'COD'
+        FieldName = 'id_departamento'
+        Title.Caption = 'COD'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'DEPARTAMENTO'
+        FieldName = 'nm_departamento'
+        Title.Caption = 'DEPARTAMENTO'
         Width = 220
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'LOCAL'
+        FieldName = 'local'
+        Title.Caption = 'LOCAL'
         Width = 150
         Visible = True
       end>
@@ -118,11 +127,20 @@ object frmDepartamentos: TfrmDepartamentos
   end
   object qryConsulta: TFDQuery
     Connection = DM_Cadastro.ConexaoBanco
-    Left = 64
-    Top = 208
+    SQL.Strings = (
+      'select * FROM DEPARTAMENTOS'
+      'ORDER BY 1')
+    Left = 40
+    Top = 328
   end
-  object DataSource1: TDataSource
+  object dsDepartamentos: TDataSource
+    DataSet = qryConsulta
     Left = 208
     Top = 232
+  end
+  object qryDepartamento: TFDQuery
+    Connection = DM_Cadastro.ConexaoBanco
+    Left = 152
+    Top = 336
   end
 end

@@ -20,7 +20,7 @@ type
 
 var
   DM_Cadastro: TDM_Cadastro;
-  ipBanco,pastaBanco:string;
+
 
 implementation
 
@@ -30,21 +30,6 @@ implementation
 
 {$R *.dfm}
 
-procedure  Leini;
 
-var   ArqIni: TIniFile;
-
-  begin
-      ArqIni := tIniFile.Create(ExtractFilePath(ParamStr(0))+'Configuracao.ini');
-
-    Try
-
-      ipbanco      := ArqIni.ReadString('Dados', 'ipbanco','');
-      pastabanco   := ArqIni.ReadString('Dados', 'pastabanco','');
-
-    Finally
-       ArqIni.Free;
-    End;
-  end;
 
 end.
