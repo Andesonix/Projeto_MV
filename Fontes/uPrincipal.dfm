@@ -2,8 +2,8 @@ object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Cadastro Empregados / Departamentos'
-  ClientHeight = 201
-  ClientWidth = 447
+  ClientHeight = 298
+  ClientWidth = 594
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,10 +12,11 @@ object frmPrincipal: TfrmPrincipal
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  WindowState = wsMaximized
   PixelsPerInch = 96
   TextHeight = 13
   object MainMenu1: TMainMenu
-    Left = 8
+    Left = 32
     Top = 8
     object C1: TMenuItem
       Caption = 'Cadastro'
@@ -28,6 +29,9 @@ object frmPrincipal: TfrmPrincipal
     end
     object R1: TMenuItem
       Caption = 'Relat'#243'rios'
+    end
+    object N11: TMenuItem
+      Caption = '1.0.0'
     end
   end
 end
