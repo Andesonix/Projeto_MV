@@ -44,20 +44,29 @@ implementation
 
 procedure TfrmDepartamentos.btnIncluirClick(Sender: TObject);
 begin
-    qryDepartamento.Close;
-    qryDepartamento.SQL.Text:= 'INSERT INTO DEPARTAMENTOS (ID_DEPARTAMENTO,NM_DEPARTAMENTO,LOCAL) '#13+
-                               'VALUES '#13+
-                               '('+edtCodDepartamento.Text+','''+edtDepartamento.Text+''','''+edtLocal.Text+''')';
+    try
 
-    qryDepartamento.ExecSQL;
-    qryConsulta.Active:=false;
-    qryConsulta.Active:=true;
-    edtCodDepartamento.Text:='';
-    edtDepartamento.Text:='';
-    edtLocal.Text:='';
-    edtCodDepartamento.SetFocus;
-    ShowMessage('CADASTRO REALIZADO COM SUCESSO') ;
+      if (edtCodDepartamento.Text='') OR (edtDepartamento.Text='') OR (edtLocal.Text='') then
+      raise Exception.Create('Preencha todos os campos');
 
+
+
+      qryDepartamento.Close;
+      qryDepartamento.SQL.Text:= 'INSERT INTO DEPARTAMENTOS (ID_DEPARTAMENTO,NM_DEPARTAMENTO,LOCAL) '#13+
+                                 'VALUES '#13+
+                                 '('+edtCodDepartamento.Text+','''+edtDepartamento.Text+''','''+edtLocal.Text+''')';
+
+      qryDepartamento.ExecSQL;
+      qryConsulta.Active:=false;
+      qryConsulta.Active:=true;
+      edtCodDepartamento.Text:='';
+      edtDepartamento.Text:='';
+      edtLocal.Text:='';
+      edtCodDepartamento.SetFocus;
+      ShowMessage('CADASTRO REALIZADO COM SUCESSO') ;
+    except
+      ShowMessage('Verifique os Dados');
+    end;
 end;
 
 procedure TfrmDepartamentos.FormShow(Sender: TObject);

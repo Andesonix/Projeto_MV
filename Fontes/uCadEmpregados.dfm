@@ -3,7 +3,7 @@ object frmCadEmpregados: TfrmCadEmpregados
   Top = 0
   Caption = 'Cadastro Empregados'
   ClientHeight = 538
-  ClientWidth = 838
+  ClientWidth = 870
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,6 +14,127 @@ object frmCadEmpregados: TfrmCadEmpregados
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
+  object Panel2: TPanel
+    Left = 2
+    Top = 8
+    Width = 831
+    Height = 105
+    TabOrder = 2
+    object gpbCod: TGroupBox
+      Left = 7
+      Top = 0
+      Width = 74
+      Height = 41
+      Caption = 'Cod.DPTO'
+      TabOrder = 7
+    end
+    object edtCodDepartamento: TEdit
+      Left = 18
+      Top = 15
+      Width = 55
+      Height = 21
+      TabOrder = 0
+    end
+    object gpbDepartamento: TGroupBox
+      Left = 164
+      Top = 0
+      Width = 275
+      Height = 41
+      Caption = 'FUNCION'#193'RIO'
+      TabOrder = 8
+    end
+    object edtFuncionario: TEdit
+      Left = 175
+      Top = 15
+      Width = 258
+      Height = 21
+      TabOrder = 2
+    end
+    object gpbLocal: TGroupBox
+      Left = 682
+      Top = 0
+      Width = 139
+      Height = 41
+      Caption = 'Comiss'#227'o'
+      TabOrder = 9
+    end
+    object GroupBox1: TGroupBox
+      Left = 84
+      Top = 0
+      Width = 74
+      Height = 41
+      Caption = 'Cod.FUNC'
+      TabOrder = 10
+    end
+    object edtCodFuncao: TEdit
+      Left = 95
+      Top = 15
+      Width = 55
+      Height = 21
+      TabOrder = 1
+    end
+    object GroupBox3: TGroupBox
+      Left = 7
+      Top = 56
+      Width = 139
+      Height = 41
+      Caption = 'Sal'#225'rio'
+      TabOrder = 11
+    end
+    object edtComissao: TEdit
+      Left = 690
+      Top = 15
+      Width = 121
+      Height = 21
+      TabOrder = 4
+    end
+    object GroupBox4: TGroupBox
+      Left = 164
+      Top = 56
+      Width = 85
+      Height = 41
+      Caption = 'Admiss'#227'o'
+      TabOrder = 12
+    end
+    object meditAdmissao: TMaskEdit
+      Left = 175
+      Top = 70
+      Width = 74
+      Height = 24
+      EditMask = '!99/99/0000;1;_'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      MaxLength = 10
+      ParentFont = False
+      TabOrder = 6
+      Text = '  /  /    '
+    end
+    object GroupBox2: TGroupBox
+      Left = 455
+      Top = 1
+      Width = 223
+      Height = 41
+      Caption = 'FUN'#199#195'O'
+      TabOrder = 13
+    end
+    object edtFuncao: TEdit
+      Left = 481
+      Top = 15
+      Width = 152
+      Height = 21
+      TabOrder = 3
+    end
+    object edtSalario: TEdit
+      Left = 19
+      Top = 73
+      Width = 121
+      Height = 21
+      TabOrder = 5
+    end
+  end
   object Panel1: TPanel
     Left = 2
     Top = 119
@@ -106,118 +227,6 @@ object frmCadEmpregados: TfrmCadEmpregados
         Title.Caption = 'ADMISS'#195'O'
         Visible = True
       end>
-  end
-  object Panel2: TPanel
-    Left = 2
-    Top = 8
-    Width = 831
-    Height = 105
-    TabOrder = 2
-    object gpbCod: TGroupBox
-      Left = 7
-      Top = 0
-      Width = 74
-      Height = 41
-      Caption = 'Cod.DPTO'
-      TabOrder = 1
-    end
-    object edtCodDepartamento: TEdit
-      Left = 18
-      Top = 15
-      Width = 55
-      Height = 21
-      TabOrder = 0
-    end
-    object gpbDepartamento: TGroupBox
-      Left = 164
-      Top = 0
-      Width = 275
-      Height = 41
-      Caption = 'FUNCION'#193'RIO'
-      TabOrder = 2
-    end
-    object edtFuncionario: TEdit
-      Left = 175
-      Top = 15
-      Width = 258
-      Height = 21
-      TabOrder = 3
-    end
-    object gpbLocal: TGroupBox
-      Left = 682
-      Top = 0
-      Width = 139
-      Height = 41
-      Caption = 'Comiss'#227'o'
-      TabOrder = 4
-    end
-    object GroupBox1: TGroupBox
-      Left = 84
-      Top = 0
-      Width = 74
-      Height = 41
-      Caption = 'Cod.FUNC'
-      TabOrder = 5
-    end
-    object edtCodFuncao: TEdit
-      Left = 95
-      Top = 15
-      Width = 55
-      Height = 21
-      TabOrder = 6
-    end
-    object GroupBox3: TGroupBox
-      Left = 7
-      Top = 56
-      Width = 139
-      Height = 41
-      Caption = 'Sal'#225'rio'
-      TabOrder = 7
-    end
-    object edtComissao: TEdit
-      Left = 690
-      Top = 15
-      Width = 121
-      Height = 21
-      TabOrder = 8
-    end
-    object GroupBox4: TGroupBox
-      Left = 164
-      Top = 56
-      Width = 139
-      Height = 41
-      Caption = 'Admiss'#227'o'
-      TabOrder = 9
-    end
-  end
-  object edtSalario: TEdit
-    Left = 19
-    Top = 79
-    Width = 121
-    Height = 21
-    TabOrder = 3
-  end
-  object GroupBox2: TGroupBox
-    Left = 447
-    Top = 8
-    Width = 223
-    Height = 41
-    Caption = 'FUN'#199#195'O'
-    TabOrder = 4
-  end
-  object edtFuncao: TEdit
-    Left = 458
-    Top = 23
-    Width = 202
-    Height = 21
-    TabOrder = 5
-  end
-  object edtAdmissao: TEdit
-    Left = 177
-    Top = 79
-    Width = 121
-    Height = 21
-    TabOrder = 6
   end
   object qryConsulta: TFDQuery
     Active = True

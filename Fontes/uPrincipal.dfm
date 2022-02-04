@@ -37,7 +37,6 @@ object frmPrincipal: TfrmPrincipal
       end
     end
     object N11: TMenuItem
-      Caption = '1.0.0'
     end
   end
   object frxDBDataset1: TfrxDBDataset
@@ -45,13 +44,13 @@ object frmPrincipal: TfrmPrincipal
     CloseDataSource = False
     DataSet = qryRelatorio
     BCDToCurrency = False
-    Left = 104
-    Top = 152
+    Left = 152
+    Top = 8
   end
   object qryRelatorio: TFDQuery
     Connection = DM_Cadastro.ConexaoBanco
-    Left = 160
-    Top = 72
+    Left = 88
+    Top = 8
   end
   object frxReport1: TfrxReport
     Version = '6.7.9'
@@ -68,8 +67,8 @@ object frmPrincipal: TfrmPrincipal
       'begin'
       ''
       'end.')
-    Left = 424
-    Top = 56
+    Left = 232
+    Top = 8
     Datasets = <
       item
         DataSet = frxDBDataset1

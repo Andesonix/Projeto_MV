@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Grids,
-  Vcl.DBGrids, Vcl.Buttons, Vcl.ExtCtrls, Vcl.Mask;
+  Vcl.DBGrids, Vcl.Buttons, Vcl.ExtCtrls, Vcl.Mask,clipbrd;
 
 type
   TfrmCadEmpregados = class(TForm)
@@ -29,11 +29,11 @@ type
     GroupBox1: TGroupBox;
     edtCodFuncao: TEdit;
     GroupBox2: TGroupBox;
-    edtFuncao: TEdit;
     GroupBox3: TGroupBox;
     edtComissao: TEdit;
     GroupBox4: TGroupBox;
-    edtAdmissao: TEdit;
+    edtFuncao: TEdit;
+    meditAdmissao: TMaskEdit;
     procedure btnIncluirClick(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
   private
@@ -51,12 +51,12 @@ implementation
 
 procedure TfrmCadEmpregados.btnIncluirClick(Sender: TObject);
 begin
-
+  TRY
     qryEmpregados.Close;
     qryEmpregados.SQL.Text:= 'INSERT INTO EMPREGADOS (COD_DEPARTAMENTO,COD_EMP_FUNCAO,NM_EMPREGADO,NM_FUNCAO,DATA_ADMISSAO,SALARIO,COMISSAO) '#13+
                                'VALUES '#13+
-                               '('+edtCodDepartamento.Text+','+edtCodFuncao.Text+','''+edtFuncionario.Text+''','''+edtFuncao.Text+''','''+edtAdmissao.Text+''','''+edtSalario.Text+''','''+edtComissao.Text+''')';
-
+                               '('+edtCodDepartamento.Text+','+edtCodFuncao.Text+','''+edtFuncionario.Text+''','''+edtFuncao.Text+''','''+meditAdmissao.Text+''','''+edtSalario.Text+''','''+edtComissao.Text+''')';
+    clipboard.astext:= qryEmpregados.SQL.Text;
     qryEmpregados.ExecSQL;
     qryConsulta.Active:=false;
     qryConsulta.Active:=true;
@@ -64,12 +64,14 @@ begin
     edtCodFuncao.Text:='';
     edtFuncionario.Text:='';
     edtFuncao.Text:='';
-    edtAdmissao.Text:='';
+    meditAdmissao.Text:='';
     edtSalario.Text:='';
     edtComissao.Text:='';
     edtCodDepartamento.SetFocus;
     ShowMessage('CADASTRO REALIZADO COM SUCESSO') ;
-
+    Except
+    Showmessage ('Verique os dados');
+    END;
 
 end;
 
@@ -88,7 +90,7 @@ begin
     edtCodFuncao.Text:='';
     edtFuncionario.Text:='';
     edtFuncao.Text:='';
-    edtAdmissao.Text:='';
+    meditAdmissao.Text:='';
     edtSalario.Text:='';
     edtComissao.Text:='';
     edtCodDepartamento.SetFocus;
